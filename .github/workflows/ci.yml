@@ -1,0 +1,22 @@
+name: Java CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      whith:
+        distribuition: temurin
+        java-version: '25'
+        cache: maven
+
+    - name: Build and run test
+      run: mvn --batch-mode clean verify
