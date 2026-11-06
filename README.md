@@ -1,3 +1,6 @@
+
+[![Java CI](https://github.com/Ocante/java-language-fundamentals/actions/workflows/ci.yml/badge.svg)](https://github.com/Ocante/java-language-fundamentals/actions/workflows/ci.yml)
+
 # Java Language Fundamentals
 
 A hands-on Java learning project focused on programming fundamentals, clean code, automated testing, and professional software development practices.
@@ -120,6 +123,46 @@ This project is designed to develop practical understanding of:
 - [ ] Implement input validation
 - [ ] Expand automated test coverage
 - [ ] Add continuous integration
+
+
+## Continuous Integration (CI)
+
+This project uses GitHub Actions to automate
+the build and testing process.
+
+### CI Workflow
+
+The pipeline is defined in:
+
+`.github/workflows/ci.yml`
+
+### Pipeline Execution
+
+The workflow runs automatically when:
+
+- Code is pushed to the `main` branch.
+- A pull request targets the `main` branch.
+
+### Automated Steps
+
+1. Checkout the repository.
+2. Configure Java 25 using Eclipse Temurin.
+3. Cache Maven dependencies.
+4. Compile the application.
+5. Execute automated JUnit tests.
+6. Verify the Maven build.
+
+### Build Command
+
+```bash
+mvn --batch-mode clean verify
+```
+
+### CI Status
+
+The latest successful workflow execution confirms
+that the project builds and passes its configured
+automated checks in the GitHub Actions environment.
 
 ## Engineering Practices
 
