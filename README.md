@@ -1,191 +1,135 @@
+
 # Java Language Fundamentals
 
-[![Java CI](https://github.com/Ocante/java-language-fundamentals/actions/workflows/ci.yml/badge.svg)](https://github.com/Ocante/java-language-fundamentals/actions/workflows/ci.yml)
+A hands-on Java Software Engineering learning project focused on
+core language concepts, clean code, automated testing, and
+professional development practices.
 
-A hands-on Java learning project focused on programming fundamentals, clean code, automated testing, continuous integration, and professional software engineering practices.
+## Project Overview
 
-## Overview
+This repository documents a progressive learning journey in Java
+Software Engineering.
 
-This repository is part of a progressive Java Software Engineering learning path, covering core language concepts and preparing for advanced object-oriented programming and enterprise application architecture.
-
-The current implementation includes a console application, a simple calculator, automated unit tests, and a GitHub Actions CI pipeline.
+Each module combines theoretical concepts, practical exercises,
+input validation, and automated tests.
 
 ## Technology Stack
 
-| Technology | Version / Purpose |
-|---|---|
-| Java | 25 LTS |
-| Apache Maven | 3.9.16 |
-| JUnit Jupiter | 5.12.2 |
-| Maven Surefire Plugin | 3.5.3 |
-| IntelliJ IDEA | Development environment |
-| Git | Version control |
-| GitHub | Source code hosting |
-| GitHub Actions | Continuous integration |
+- Java 25
+- Maven 3.9.x
+- JUnit Jupiter 5
+- Maven Surefire Plugin
+- IntelliJ IDEA
+- GitHub Actions
+
+## Learning Modules
+
+### Lesson 01 — Java Development Environment
+
+- JDK installation and configuration
+- IntelliJ IDEA project setup
+- Maven project structure
+- Java classes and methods
+- First Java application
+- Unit testing with JUnit
+- Continuous Integration with GitHub Actions
+
+### Lesson 02 — Variables, Operators and Input
+
+- Variables and primitive data types
+- Numeric ranges and integer overflow
+- Arithmetic operators
+- Relational and logical operators
+- Implicit and explicit type casting
+- Console input using Scanner
+- Input validation and exception handling
+- Separation of responsibilities
+- Unit tests and integration tests
 
 ## Project Structure
 
 ```text
-java-language-fundamentals/
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── src/
-│   ├── main/
-│   │   └── java/com/ocante/fundamentals/
-│   │       ├── Main.java
-│   │       └── Calculator.java
-│   └── test/
-│       └── java/com/ocante/fundamentals/
-│           └── CalculatorTest.java
-├── .gitignore
-├── pom.xml
-└── README.md
+src/
+├── main/java/com/ocante/fundamentals/
+│   ├── casting/
+│   ├── input/
+│   ├── operators/
+│   ├── validation/
+│   └── variables/
+│
+└── test/java/com/ocante/fundamentals/
+    ├── casting/
+    ├── input/
+    ├── operators/
+    └── validation/
 ```
 
-## Implemented Features
+## Automated Testing
 
-### Console Application
+The project currently includes 47 automated tests covering:
 
-The `Main` class demonstrates the Java application entry point and console output using `System.out.println()`.
+- Basic arithmetic operations
+- Access validation rules
+- Numeric type conversions
+- Employee input validation
+- Console application integration
 
-### Calculator
-
-The `Calculator` class currently implements integer addition through the `add()` method.
-
-### Automated Testing
-
-The `CalculatorTest` class uses JUnit Jupiter to verify the expected result of an addition operation.
-
-The tests are executed locally using Maven and automatically through GitHub Actions.
-
-## Getting Started
-
-### Prerequisites
-
-- JDK 25
-- Apache Maven 3.9.x
-- Git
-- IntelliJ IDEA (recommended)
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/Ocante/java-language-fundamentals.git
-cd java-language-fundamentals
-```
-
-### Compile the Project
-
-```bash
-mvn clean compile
-```
-
-### Run the Application
-
-Open the project in IntelliJ IDEA.
-
-1. Navigate to `src/main/java/com/ocante/fundamentals/Main.java`.
-2. Click the green Run icon next to the `main` method.
-3. Select `Run 'Main.main()'`.
-4. Check the output in the Run console.
-
-### Run Automated Tests
+Run all tests:
 
 ```bash
 mvn clean test
 ```
 
-Expected result for the current test suite:
-
-```text
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-BUILD SUCCESS
-```
-
-## Continuous Integration (CI)
-
-This project uses GitHub Actions to automate the build and testing process.
-
-### Workflow Configuration
-
-The CI pipeline is defined in:
-
-`.github/workflows/ci.yml`
-
-### Pipeline Triggers
-
-The workflow runs automatically when:
-
-- Code is pushed to the `main` branch.
-- A pull request targets the `main` branch.
-
-### Automated Pipeline Steps
-
-1. Check out the repository source code.
-2. Configure Java 25 using Eclipse Temurin.
-3. Cache Maven dependencies.
-4. Compile the application.
-5. Execute automated JUnit tests.
-6. Verify the Maven build.
-
-### Build Command
+Run the complete Maven verification lifecycle:
 
 ```bash
-mvn --batch-mode clean verify
+mvn clean verify
 ```
 
-### CI Status
+## Continuous Integration
 
-The workflow status is displayed at the top of this README.
+GitHub Actions is configured to execute the Maven verification
+lifecycle on supported repository events.
 
-The first successful GitHub Actions execution confirmed that the project builds and passes its configured automated checks in the CI environment.
-
-[View GitHub Actions workflow](https://github.com/Ocante/java-language-fundamentals/actions)
-
-## Learning Objectives
-
-This project is designed to develop practical understanding of:
-
-- Java syntax and program structure
-- Classes and methods
-- Primitive data types
-- Method parameters and return values
-- Maven project organization
-- Automated testing with JUnit
-- Git version control
-- Technical documentation
-- Continuous integration fundamentals
-
-## Development Roadmap
-
-- [x] Configure Java and Maven
-- [x] Create the initial Java application
-- [x] Implement a calculator
-- [x] Add the first JUnit test
-- [x] Initialize Git version control
-- [x] Publish the project on GitHub
-- [x] Implement GitHub Actions continuous integration
-- [ ] Expand Java language fundamentals
-- [ ] Add conditional statements and loops
-- [ ] Implement input validation
-- [ ] Expand automated test coverage
+The CI workflow helps detect compilation errors and test failures
+before changes are integrated.
 
 ## Engineering Practices
 
-The project follows an incremental development approach with:
-
-- Descriptive commit messages following Conventional Commits
-- Reproducible Maven builds
+- Descriptive class and method names
+- Separation of responsibilities
+- Input validation
 - Automated unit testing
-- GitHub Actions continuous integration
-- Structured source code organization
-- Technical documentation in English
+- Integration testing
+- Reproducible Maven builds
+- Continuous Integration
+- Incremental documentation
 
-Additional engineering practices will be introduced as the project evolves.
+## Roadmap
+
+- [x] Java environment and Maven
+- [x] Variables and primitive types
+- [x] Arithmetic, relational, and logical operators
+- [x] Type casting
+- [x] Scanner and input validation
+- [x] JUnit unit and integration tests
+- [ ] Control flow and loops
+- [ ] Methods and method overloading
+- [ ] Object-Oriented Programming
+- [ ] Collections and Generics
+- [ ] Exception handling in depth
+- [ ] File handling and serialization
+- [ ] JDBC and relational databases
+- [ ] Spring Boot and REST APIs
 
 ## Author
 
-**Ocante**
+Ocante
 
-Java Software Engineering Learning Portfolio
+GitHub: https://github.com/Ocante
+
+## Learning Objective
+
+Build a strong foundation in Java and progressively develop
+the skills required for professional backend software engineering
+and software architecture.
